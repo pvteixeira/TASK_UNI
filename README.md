@@ -1,16 +1,59 @@
-# React + Vite
+# 🎓 TaskUni
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**TaskUni** is a premium, modern student management platform designed to help university students organize their academic life with style and efficiency. 
 
-Currently, two official plugins are available:
+Built with a focus on UI/UX, TaskUni offers a glassmorphism-inspired dark interface that makes tracking tasks, grades, and study plans a seamless experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![TaskUni Dashboard](https://raw.githubusercontent.com/pvteixeira/Projeto_Faculdade/main/public/dashboard-preview.png)
+*(Note: Replace with actual hosted image link or local path if available in repo)*
 
-## React Compiler
+## ✨ Key Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- 📊 **Intelligent Dashboard**: A bird's-eye view of your academic progress and upcoming deadlines.
+- 📚 **Discipline Management**: Organize your subjects, professors, and class schedules in one place.
+- ✅ **Task Tracker**: Never miss a deadline again with our intuitive task management system.
+- 📈 **Grade Tracking**: Monitor your performance across all disciplines with automated calculations.
+- 📅 **Study Plan**: Plan your study sessions and stay ahead of your curriculum.
+- 💾 **Persistent Data**: Your data is automatically saved to LocalStorage, ensuring you never lose progress.
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Framework**: [React 19](https://react.dev/)
+- **Build Tool**: [Vite](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Routing**: [React Router 7](https://reactrouter.com/)
+- **State Management**: Custom LocalStorage Hooks
+
+## 🚀 Getting Started
+
+To run the project locally, follow these steps:
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/pvteixeira/Projeto_Faculdade.git
+cd Projeto_Faculdade
+```
+
+### 2. Install dependencies
+```bash
+npm install
+```
+
+### 3. Start the development server
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:5173`.
+
+## 🎨 Design Philosophy
+
+TaskUni was designed to be "WOW" at first glance. It uses:
+- **Glassmorphism**: Subtle translucency and blur effects.
+- **Vibrant Gradients**: Purple and Cyan accents for a modern feel.
+- **Responsive Layout**: Optimized for all screen sizes.
+
+---
+
+Made with ❤️ for students who want to excel.
