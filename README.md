@@ -1,59 +1,57 @@
-# 🎓 TaskUni
+# TaskUni
 
-**TaskUni** is a premium, modern student management platform designed to help university students organize their academic life with style and efficiency. 
-
-Built with a focus on UI/UX, TaskUni offers a glassmorphism-inspired dark interface that makes tracking tasks, grades, and study plans a seamless experience.
+**TaskUni** é uma plataforma de produtividade acadêmica desenvolvida para estudantes universitários que querem organizar sua vida acadêmica com eficiência. Combina gerenciamento de tarefas, acompanhamento de notas e planejamento de estudos em uma interface única — com um visual escuro inspirado em glassmorphism, projetado para manter o foco no que importa.
 
 ![TaskUni Dashboard](https://raw.githubusercontent.com/pvteixeira/Projeto_Faculdade/main/public/dashboard-preview.png)
-*(Note: Replace with actual hosted image link or local path if available in repo)*
 
-## ✨ Key Features
+## Funcionalidades
 
-- 📊 **Intelligent Dashboard**: A bird's-eye view of your academic progress and upcoming deadlines.
-- 📚 **Discipline Management**: Organize your subjects, professors, and class schedules in one place.
-- ✅ **Task Tracker**: Never miss a deadline again with our intuitive task management system.
-- 📈 **Grade Tracking**: Monitor your performance across all disciplines with automated calculations.
-- 📅 **Study Plan**: Plan your study sessions and stay ahead of your curriculum.
-- 💾 **Persistent Data**: Your data is automatically saved to LocalStorage, ensuring you never lose progress.
+- **Dashboard** — Visão geral do progresso acadêmico, tarefas pendentes e prazos próximos.
+- **Gerenciamento de Disciplinas** — Organize matérias, professores e horários em um só lugar.
+- **Rastreador de Tarefas** — Crie, priorize e acompanhe trabalhos com datas de entrega e controle de status.
+- **Acompanhamento de Notas** — Registre notas por disciplina e monitore médias automaticamente.
+- **Plano de Estudos** — Agende sessões de estudo alinhadas ao calendário do semestre.
+- **Armazenamento Persistente** — Todos os dados são salvos localmente via `localStorage` — sem necessidade de conta.
 
-## 🛠️ Tech Stack
+## Stack Tecnológica
 
-- **Framework**: [React 19](https://react.dev/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Routing**: [React Router 7](https://reactrouter.com/)
-- **State Management**: Custom LocalStorage Hooks
+| Camada | Tecnologia |
+|---|---|
+| Framework | [React 19](https://react.dev/) |
+| Build Tool | [Vite](https://vitejs.dev/) |
+| Estilização | [Tailwind CSS 4](https://tailwindcss.com/) |
+| Ícones | [Lucide React](https://lucide.dev/) |
+| Roteamento | [React Router 7](https://reactrouter.com/) |
+| Estado | Hooks customizados com `localStorage` |
 
-## 🚀 Getting Started
+## Como Executar
 
-To run the project locally, follow these steps:
-
-### 1. Clone the repository
+### 1. Clone o repositório
 ```bash
 git clone https://github.com/pvteixeira/Projeto_Faculdade.git
 cd Projeto_Faculdade
 ```
 
-### 2. Install dependencies
+### 2. Instale as dependências
 ```bash
 npm install
 ```
 
-### 3. Start the development server
+### 3. Inicie o servidor de desenvolvimento
 ```bash
 npm run dev
 ```
 
-The application will be available at `http://localhost:5173`.
+A aplicação estará disponível em `http://localhost:5173`.
 
-## 🎨 Design Philosophy
+## Design
 
-TaskUni was designed to be "WOW" at first glance. It uses:
-- **Glassmorphism**: Subtle translucency and blur effects.
-- **Vibrant Gradients**: Purple and Cyan accents for a modern feel.
-- **Responsive Layout**: Optimized for all screen sizes.
+TaskUni foi construído com atenção à experiência visual:
+
+- **Glassmorphism** — Efeitos de translucidez e blur para profundidade de interface.
+- **Gradientes** — Acentos em roxo e ciano para uma estética contemporânea.
+- **Responsividade** — Layout otimizado para diferentes tamanhos de tela.
 
 ---
 
-Made with ❤️ for students who want to excel.
+Feito para estudantes que levam a sério o próprio desempenho.
