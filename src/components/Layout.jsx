@@ -1,5 +1,7 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import ProfileModal from './ProfileModal';
 import { 
   GraduationCap, 
   LogOut,
@@ -14,6 +16,7 @@ import {
 
 export default function Layout() {
   const { user, logout } = useAuth();
+  const [isProfileOpen, setIsProfileOpen] = useState(false);
   const navigate = useNavigate();
 
   // Safeguard
@@ -58,12 +61,19 @@ export default function Layout() {
 
         {/* Right Section: Notifications & User */}
         <div className="flex items-center gap-6">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-brand-primary/20 text-brand-primary rounded-full flex items-center justify-center font-bold border border-brand-primary/30">
-              {user?.name ? user.name.split(' ').map(n => n[0]).filter(Boolean).join('').toUpperCase().slice(0, 2) : '??'}
+          <div 
+            className="flex items-center gap-3 cursor-pointer group"
+            onClick={() => setIsProfileOpen(true)}
+          >
+            <div className="w-10 h-10 bg-brand-primary/20 text-brand-primary rounded-full flex items-center justify-center font-bold border border-brand-primary/30 overflow-hidden group-hover:border-brand-primary transition-all">
+              {user?.photo ? (
+                <img src={user.photo} alt="User" className="w-full h-full object-cover" />
+              ) : (
+                user?.name ? user.name.split(' ').map(n => n[0]).filter(Boolean).join('').toUpperCase().slice(0, 2) : '??'
+              )}
             </div>
             <div className="hidden md:block text-right">
-              <p className="text-sm font-bold text-white mb-0.5">{user?.name}</p>
+              <p className="text-sm font-bold text-white mb-0.5 group-hover:text-brand-primary transition-colors">{user?.name}</p>
               <p className="text-[10px] text-slate-500 uppercase font-bold tracking-wider">{user?.institution || 'N/A'} • {user?.period || 'N/A'}</p>
             </div>
           </div>
@@ -84,6 +94,11 @@ export default function Layout() {
           <Outlet />
         </div>
       </main>
+
+      <ProfileModal 
+        isOpen={isProfileOpen}
+        onClose={() => setIsProfileOpen(false)}
+      />
     </div>
   );
 }

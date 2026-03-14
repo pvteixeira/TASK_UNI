@@ -44,9 +44,22 @@ export default function Dashboard() {
   return (
     <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Welcome Header */}
-      <div>
-        <h1 className="text-4xl font-bold text-white mb-2">Bom dia, {user?.name ? user.name.split(' ')[0] : 'estudante'} 👋</h1>
-        <p className="text-slate-500 font-medium">{user?.institution} • {user?.period} • {new Date().toLocaleDateString('pt-BR', { month: 'long', day: 'numeric' })}</p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-4xl font-bold text-white mb-2">Bom dia, {user?.name ? user.name.split(' ')[0] : 'estudante'} 👋</h1>
+          <p className="text-slate-500 font-medium">{user?.institution} • {user?.period} • {new Date().toLocaleDateString('pt-BR', { month: 'long', day: 'numeric' })}</p>
+        </div>
+        <div className="hidden sm:block">
+          <div className="w-16 h-16 rounded-2xl bg-brand-primary/10 border border-brand-primary/20 flex items-center justify-center overflow-hidden">
+            {user?.photo ? (
+              <img src={user.photo} alt="Profile" className="w-full h-full object-cover" />
+            ) : (
+               <span className="text-xl font-bold text-brand-primary">
+                 {user?.name ? user.name.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() : '??'}
+               </span>
+            )}
+          </div>
+        </div>
       </div>
 
       {/* KPI Grid */}
