@@ -23,11 +23,11 @@ export default function Layout() {
   if (!user) return null;
 
   const menuItems = [
-    { label: 'Dashboard', path: '/' },
-    { label: 'Disciplinas', path: '/disciplines' },
-    { label: 'Tarefas', path: '/tasks' },
-    { label: 'Notas', path: '/grades' },
-    { label: 'Estudo', path: '/study-plan' },
+    { label: 'Dashboard', path: '/dashboard' },
+    { label: 'Disciplinas', path: '/dashboard/disciplines' },
+    { label: 'Tarefas', path: '/dashboard/tasks' },
+    { label: 'Notas', path: '/dashboard/grades' },
+    { label: 'Estudo', path: '/dashboard/study-plan' },
   ];
 
   return (
