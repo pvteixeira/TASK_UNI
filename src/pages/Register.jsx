@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { Mail, Lock, User, UserPlus } from 'lucide-react';
@@ -8,14 +8,16 @@ export default function Register() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { register } = useAuth();
+  const { register, isAuthenticated } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
     try {
       register({ name, email, password });
-      navigate('/');
+      // Force a hard refresh to the personalization page
+      // This ensures all contexts pick up the new user from localStorage
+      window.location.href = '/personalization';
     } catch (err) {
       setError(err.message);
     }

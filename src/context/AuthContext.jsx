@@ -34,7 +34,6 @@ function authReducer(state, action) {
         isAuthenticated: false,
       };
     case 'REGISTER':
-      // In a real app, we'd hit an API. Here we just store in localStorage 'users' list
       const users = JSON.parse(localStorage.getItem('taskuni_registered_users')) || [];
       const userExists = users.find(u => u.email === action.payload.email);
       
@@ -46,12 +45,27 @@ function authReducer(state, action) {
       users.push(newUser);
       localStorage.setItem('taskuni_registered_users', JSON.stringify(users));
       
-      // Auto-login after register
       localStorage.setItem('taskuni_user', JSON.stringify(newUser));
       return {
         ...state,
         user: newUser,
         isAuthenticated: true,
+      };
+    case 'UPDATE_USER':
+      const updatedUser = { ...state.user, ...action.payload };
+      localStorage.setItem('taskuni_user', JSON.stringify(updatedUser));
+      
+      // Update in registered users list too
+      const allUsers = JSON.parse(localStorage.getItem('taskuni_registered_users')) || [];
+      const userIndex = allUsers.findIndex(u => u.id === updatedUser.id);
+      if (userIndex !== -1) {
+        allUsers[userIndex] = updatedUser;
+        localStorage.setItem('taskuni_registered_users', JSON.stringify(allUsers));
+      }
+      
+      return {
+        ...state,
+        user: updatedUser,
       };
     default:
       return state;
@@ -81,8 +95,12 @@ export function AuthProvider({ children }) {
     dispatch({ type: 'LOGOUT' });
   };
 
+  const updateUser = (data) => {
+    dispatch({ type: 'UPDATE_USER', payload: data });
+  };
+
   return (
-    <AuthContext.Provider value={{ ...state, login, register, logout }}>
+    <AuthContext.Provider value={{ ...state, login, register, logout, updateUser }}>
       {children}
     </AuthContext.Provider>
   );

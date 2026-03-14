@@ -7,6 +7,7 @@ import Disciplines from './pages/Disciplines';
 import Tasks from './pages/Tasks';
 import Grades from './pages/Grades';
 import StudyPlan from './pages/StudyPlan';
+import Personalization from './pages/Personalization';
 import Layout from './components/Layout';
 
 const ProtectedRoute = ({ children }) => {
@@ -19,6 +20,11 @@ function App() {
     <Routes>
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/personalization" element={
+        <ProtectedRoute>
+          <Personalization />
+        </ProtectedRoute>
+      } />
       
       <Route path="/" element={
         <ProtectedRoute>

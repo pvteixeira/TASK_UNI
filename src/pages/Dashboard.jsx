@@ -13,6 +13,9 @@ import {
 export default function Dashboard() {
   const { user } = useAuth();
   const { state } = useData();
+  
+  if (!user) return null;
+
   const { disciplines, tasks, grades, studyPlans } = state;
 
   // Calculate Average Grade
@@ -42,8 +45,8 @@ export default function Dashboard() {
     <div className="space-y-10 animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Welcome Header */}
       <div>
-        <h1 className="text-4xl font-bold text-white mb-2">Bom dia, {user?.name.split(' ')[0]} 👋</h1>
-        <p className="text-slate-500 font-medium">Semestre 2025.2 • {new Date().toLocaleDateString('pt-BR', { month: 'long', day: 'numeric' })}</p>
+        <h1 className="text-4xl font-bold text-white mb-2">Bom dia, {user?.name ? user.name.split(' ')[0] : 'estudante'} 👋</h1>
+        <p className="text-slate-500 font-medium">{user?.institution} • {user?.period} • {new Date().toLocaleDateString('pt-BR', { month: 'long', day: 'numeric' })}</p>
       </div>
 
       {/* KPI Grid */}
