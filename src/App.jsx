@@ -8,6 +8,7 @@ import Tasks from './pages/Tasks';
 import Grades from './pages/Grades';
 import StudyPlan from './pages/StudyPlan';
 import Personalization from './pages/Personalization';
+import LandingPage from './pages/LandingPage';
 import Layout from './components/Layout';
 
 const ProtectedRoute = ({ children }) => {
@@ -16,8 +17,12 @@ const ProtectedRoute = ({ children }) => {
 };
 
 function App() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <Routes>
+      <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <LandingPage />} />
+      <Route path="/landing" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
       <Route path="/personalization" element={
@@ -26,7 +31,7 @@ function App() {
         </ProtectedRoute>
       } />
       
-      <Route path="/" element={
+      <Route path="/dashboard" element={
         <ProtectedRoute>
           <Layout />
         </ProtectedRoute>
